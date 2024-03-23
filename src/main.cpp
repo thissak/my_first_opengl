@@ -1,4 +1,4 @@
-#include <spdlog/spdlog.h>
+﻿#include <spdlog/spdlog.h>
 #include <glad/glad.h>
 #include <GLFW/glfw3.h>
 
@@ -62,12 +62,12 @@ int main(int arc, const char** argv){
     OnFramebufferSizeChange(window, WINDOW_WIDTH, WINDOW_HEIGHT);
     glfwSetFramebufferSizeCallback(window, OnFramebufferSizeChange);
     glfwSetKeyCallback(window, OnKeyEvent);
+    glClearColor(0.0f, 0.1f, 0.2f, 0.0f);
 
     // glfw 루프실행, 윈도우 CLOSE 버튼을 누르면 정상 종료
     SPDLOG_INFO("Start main loop");
     while (!glfwWindowShouldClose(window)){
         glfwPollEvents();
-        glClearColor(0.0f, 0.1f, 0.2f, 0.0f);
         glClear(GL_COLOR_BUFFER_BIT);
         glfwSwapBuffers(window);
     }
